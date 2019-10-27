@@ -2,8 +2,7 @@ import { createLogger, format, transports } from 'winston';
 const { combine, timestamp, label, printf } = format;
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
-    console.log(message);
-    return `Time: ${timestamp}; Method: ${message.method}; Payload: ${JSON.stringify(message.payload)}.`;
+    return `Time: ${timestamp}; ${message.name}: ${message.text}.`;
 });
 
 export const logger = createLogger({
