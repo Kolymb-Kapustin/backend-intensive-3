@@ -5,6 +5,8 @@ const debug = dg('router:users');
 export const get = (req, res) => {
     debug(`${req.method} - ${req.originalUrl}`);
 
+    throw new Error('TEST')
+
     try {
         const data = [];
 
