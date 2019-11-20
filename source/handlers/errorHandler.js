@@ -1,15 +1,14 @@
-import winston from 'winston';
 import { logger } from '../utils/';
 
-export const errorHandler = (err, req, res, next) => {
+export const errorHandler = (error, req, res, next) => {
     if (process.env.NODE_ENV !== 'test') {
         logger.error({
             message: {
-               name: err.name,
-               text: err.message
-            }
+                name: error.name,
+                text: error.message,
+            },
         });
     }
 
     next();
-}
+};
