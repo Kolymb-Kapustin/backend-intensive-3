@@ -5,7 +5,7 @@ const myFormat = printf(({message, timestamp }) => {
     return `Time: ${timestamp}; ${message.name}: ${message.text}.`;
 });
 
-export const logger = createLogger({
+export const defaultLogger = createLogger({
     format: combine(
         timestamp(),
         myFormat,
