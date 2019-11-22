@@ -5,10 +5,10 @@ const myFormat = printf(({ message, timestamp }) => {
     return `Time: ${timestamp}; ${message.name}: ${message.text}.`;
 });
 
-export const defaultLogger = createLogger({
+export const validationLogger = createLogger({
     format: combine(
         timestamp(),
         myFormat,
     ),
-    transports: [ new transports.File({ filename: 'source/logs/error.log', level: 'error' }) ],
+    transports: [ new transports.File({ filename: 'source/logs/validation_errors.log', level: 'error' }) ],
 });

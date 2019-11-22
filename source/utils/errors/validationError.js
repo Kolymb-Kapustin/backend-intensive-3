@@ -1,9 +1,8 @@
-import { defaultLogger } from '../../utils/';
+// import { validationLogger } from '../../utils/';
 
 export class ValidationError extends Error {
     constructor(...args) {
-        // eslint-disable-next-line
-        console.log(defaultLogger);
         super(...args);
+        this.type = 'ValidationError';
     }
 }
