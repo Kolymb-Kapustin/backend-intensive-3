@@ -4,3 +4,5 @@ export { limiter } from './limiter';
 export { validator } from './validator';
 export { NotFoundError, ValidationError } from './errors';
 export { defaultLogger, validationLogger, notFoundLogger } from './loggers';
+export { sessionOptions } from './sessionOptions';
+export { authenticate } from './authenticate';

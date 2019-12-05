@@ -1,7 +1,8 @@
 // Core
 import express from 'express';
 import bodyParser from 'body-parser';
-import { getPassword, NotFoundError } from './utils';
+import { getPassword, NotFoundError, sessionOptions } from './utils';
+import session from 'express-session';
 
 //Routers
 import * as routers from './routers';
@@ -11,6 +12,7 @@ import * as handlers from './handlers';
 
 const app = express();
 
+app.use(session(sessionOptions));
 app.use(bodyParser.json({ limit: '10kb' }));
 
 // Check password

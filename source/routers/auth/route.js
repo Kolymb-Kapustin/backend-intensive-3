@@ -5,6 +5,8 @@ const debug = dg('router:auth');
 export const login = (req, res) => {
     debug(`${req.method} - ${req.originalUrl}`);
 
+    req.session.user = {email: 'test@mail'};
+
     try {
         res.sendStatus(204);
     } catch (error) {
@@ -14,6 +16,8 @@ export const login = (req, res) => {
 
 export const logout = (req, res) => {
     debug(`${req.method} - ${req.originalUrl}`);
+
+    req.session.destroy();
 
     try {
         res.sendStatus(204);
